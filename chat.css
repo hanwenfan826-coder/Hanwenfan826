@@ -1,0 +1,30 @@
+.chat-workspace{grid-template-columns:minmax(260px,340px) minmax(0,1fr)}
+.kb-panel{padding:18px;display:grid;gap:14px}
+.kb-panel h3{margin:0;font-size:17px}
+.kb-panel p{margin:0;color:var(--muted);line-height:1.65;font-size:14px}
+.kb-list{display:grid;gap:8px}
+.kb-item{border:1px solid var(--line);border-radius:8px;padding:10px;background:#fbfbfa}
+.kb-item strong{display:block;font-size:14px;margin-bottom:4px}
+.kb-item span{display:block;color:var(--muted);font-size:12px;line-height:1.5}
+.prompt-chip{text-align:left;height:auto;min-height:unset;padding:10px 12px;line-height:1.5;background:#fff}
+.chat-panel{display:grid;grid-template-rows:auto minmax(420px,60vh) auto;overflow:hidden}
+.chat-header{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fbfbfa}
+.chat-header h3{margin:0;font-size:18px}
+.chat-header p{margin:4px 0 0;color:var(--muted);font-size:13px;line-height:1.5}
+.messages{padding:18px;overflow:auto;background:#fff}
+.message{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;margin-bottom:16px}
+.message.user{grid-template-columns:minmax(0,1fr) 34px}
+.message.user .avatar{grid-column:2;background:var(--red)}
+.message.user .bubble{grid-column:1;grid-row:1;background:#fff4ef;border-color:#f1c4b8}
+.avatar{width:34px;height:34px;border-radius:8px;background:var(--dark);color:#fff;display:grid;place-items:center;font-weight:900}
+.bubble{border:1px solid var(--line);border-radius:8px;padding:14px;background:#f8fbfb;line-height:1.7}
+.bubble p{margin:0 0 10px}
+.bubble p:last-child{margin-bottom:0}
+.bubble ul{margin:8px 0 0;padding-left:20px}
+.bubble li{margin:5px 0}
+.chat-input{display:grid;grid-template-columns:minmax(0,1fr) 96px;gap:10px;padding:14px;border-top:1px solid var(--line);background:#fbfbfa}
+.chat-input textarea{min-height:76px;max-height:180px}
+.chat-input button{height:76px}
+.tool{min-height:36px;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:#fff}
+@media(max-width:980px){.chat-workspace{grid-template-columns:1fr}.chat-panel{grid-template-rows:auto minmax(360px,55vh) auto}}
+@media(max-width:560px){.chat-input{grid-template-columns:1fr}.chat-input button{height:44px}.message,.message.user{grid-template-columns:30px minmax(0,1fr)}.message.user .avatar{grid-column:1}.message.user .bubble{grid-column:2}}
