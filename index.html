@@ -8,6 +8,7 @@
   <meta name="robots" content="index, follow">
   <title>短视频编导智能体 - 知识库驱动的策划脚本工作台</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./chat.css">
 </head>
 <body>
   <div class="layout">
@@ -46,60 +47,31 @@
         </div>
       </section>
 
-      <section class="workspace" id="workspace">
-        <form id="form" class="panel form">
-          <label>账号定位
-            <input name="positioning" value="新消费品牌官方号，专业但有亲和力">
-          </label>
-          <label>视频主题
-            <input name="topic" value="一款低糖气泡茶的夏季上新">
-          </label>
-          <label>目标用户
-            <input name="audience" value="20-35 岁关注控糖、通勤、轻健康的人群">
-          </label>
-          <label>核心卖点
-            <textarea name="selling">低糖、真实茶香、开罐即饮、适合办公室和户外场景</textarea>
-          </label>
-          <div class="row">
-            <label>发布平台
-              <select name="platform">
-                <option>抖音</option><option>小红书</option><option>视频号</option><option>B 站</option>
-              </select>
-            </label>
-            <label>视频时长
-              <select name="duration">
-                <option>30 秒</option><option>15 秒</option><option>60 秒</option><option>90 秒</option>
-              </select>
-            </label>
-          </div>
-          <label>内容风格
-            <select name="style">
-              <option>剧情种草</option>
-              <option>测评讲解</option>
-              <option>街采互动</option>
-              <option>教程清单</option>
-              <option>热点借势</option>
-            </select>
-          </label>
-          <div class="checks">
-            <label><input type="checkbox" name="trend" checked>结合热点趋势</label>
-            <label><input type="checkbox" name="conversion" checked>强化转化路径</label>
-            <label><input type="checkbox" name="team" checked>输出团队分工</label>
-            <label><input type="checkbox" name="risk" checked>包含应急方案</label>
-          </div>
-          <button class="primary" type="submit">生成编导方案</button>
-        </form>
+      <section class="workspace chat-workspace" id="workspace">
+        <aside class="panel kb-panel">
+          <h3>知识库状态</h3>
+          <p id="kbStatus">正在加载知识库...</p>
+          <div class="kb-list" id="kbList"></div>
+          <h3>你可以这样问</h3>
+          <button class="prompt-chip">我要做一个深夜面馆账号，帮我定选题方向</button>
+          <button class="prompt-chip">用晒过程模型，给我 10 个选题</button>
+          <button class="prompt-chip">把第 3 个选题展开成 30 秒脚本</button>
+          <button class="prompt-chip">这个太普通了，改成强人设和反差段子</button>
+        </aside>
 
-        <section class="panel output">
-          <div class="tabs">
-            <button class="tab active" data-tab="strategy">策划</button>
-            <button class="tab" data-tab="script">脚本</button>
-            <button class="tab" data-tab="storyboard">分镜</button>
-            <button class="tab" data-tab="execution">执行</button>
-            <button class="tab" data-tab="review">复盘</button>
-            <button class="tool" id="copy">复制</button>
+        <section class="panel chat-panel">
+          <div class="chat-header">
+            <div>
+              <h3>编导智能体对话</h3>
+              <p>会根据你的问题检索账号定位、选题、脚本模型、呈现形式、拆片和复盘知识。</p>
+            </div>
+            <button class="tool" id="clearChat">清空</button>
           </div>
-          <div id="result" class="empty">填写左侧信息后生成方案。默认示例已经填好，可以直接点击生成。</div>
+          <div id="messages" class="messages"></div>
+          <form id="chatForm" class="chat-input">
+            <textarea id="userInput" placeholder="直接说你的需求，例如：我想做一个本地餐饮账号，老板能出镜，客单价 30-50，帮我按知识库策划内容线。"></textarea>
+            <button class="primary" type="submit">发送</button>
+          </form>
         </section>
       </section>
     </main>
