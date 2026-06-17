@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Replace this after the public domain is confirmed.
-Sitemap: https://YOUR_PUBLIC_DOMAIN/sitemap.xml
+Sitemap: https://hanwenfan826-coder.github.io/Hanwenfan826/sitemap.xml
